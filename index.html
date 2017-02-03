@@ -1,9 +1,215 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="css/style.min.css">
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+  	<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  </head>
+  <body>
+  
+  	<div id="left" class="hidden-phone">
+  	  <div id="logo">
+  	  	sss
+  	  </div>
+  	  <nav>
+  	  	<ul id="menu">
+          <li>Dashboard</li>
+          <li class="active">Orders</li>
+          <li>Companies</li>
+          <li>Products</li>
+          <li>Documents</li>
+          <li>Pricing</li>
+          <li>Brands</li>
+          <li>Settings</li>
+          <li>Reports</li>
+          <li>Account Users</li>
+        </ul>
+  	  </nav>
+
+      <script>
+        $(document).ready(function(){
+          $("ul#menu").on("click","li", function(){
+            $("li").removeClass("active");
+            $(this).addClass("active");
+          })
+        });
+
+        jQuery(function($){
+          function leftpad(){
+            var $left = $("#left");
+            var leftwidth = $left.width();
+
+            $("#right").css("padding-left",leftwidth);
+          }
+          $(window).resize(leftpad);
+          leftpad();
+        });
+      </script>
+  	</div>
+  	<div id="right">
+  		<section id="top">
+        <div class="container">
+          <div class="search">Search here  </div>
+        </div>
+      </section>
+      <section id="main">
+        <div class="container">
+
+          <div class="invoice"><h1><span class="order">Orders / </span><span class="invoice">TN SO 000015</span></h1></div>
+
+          <div id="addproduct">
+            <p>Add Products</p>
+          </div>
+
+          <div id="details">
+            <div>
+
+            <table>
+              <tr>
+                <th>SKU</th>
+                <th>DESCRIPTION</th>
+                <th>BRAND</th>
+                <th>LIST PRICE</th>
+                <th>DISCOUNT</th>
+                <th>NET PRICE</th>
+                <th>QTY</th>
+                <th>TOTAL</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="sku">TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+              <tr>
+                <td>TN SO 000015</td>
+                <td>Magnetic contactor - 9A (5.5 kW\, 
+7.5 HP)\, control voltage 230 Vac</td>
+                <td>Schneider Electric</td>
+                <td>THB 880</td>
+                <td>30%</td>
+                <td>THB 660</td>
+                <td>16</td>
+                <td>THB 50,079,8823</td>
+                <td>Remove Item</td>
+              </tr>
+
+            </table>
+
+            </div>
+          </div>
+
+          <h2>Remarks</h2>
+          <div id="remark">
+            <p>When you enter into any new area of science, you almost always find yourself with a baffling new language of technical terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope. So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able to talk to them more intelligently. </p>
+          </div>
+        </div>
+      </section>
+  	</div>
+    <div style="clear:both; line-height:0; height:0; font-size: 1px">
+  </div>
+  </body>
 </html>
