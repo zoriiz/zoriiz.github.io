@@ -1,7 +1,7 @@
 @import 'reset';
 
 $left: 17%
-$left-tablet: 8%
+$left-tablet: 6%
 $eight: 50%
 $eleven: 68.75%
 $ten: 62.5%
@@ -20,6 +20,9 @@ body
 input 
   font-family: Montserrat
   border: 0
+
+select, button
+  font-family: Montserrat
 
 *:focus
   outline: none
@@ -43,6 +46,9 @@ input
   border: 1px solid #C3C8CD
   border-radius: 3px
   margin-bottom: 14px
+
+=bold 
+  font-weight: bold
 
 =table
   table 
@@ -72,10 +78,13 @@ input
         cursor: pointer
       td.details
         max-width: 160px
+      td.setprice
+        a 
+          text-align: center
+          color: #CD171A
 
     tr:nth-child(odd)
       background-color: #fcfcfc
-      // box-shadow: 0 1px 0 0 #f7f7f7
 
 i 
   vertical-align: middle
@@ -95,8 +104,18 @@ i
     display: none
     width: 0% !important
 
+.w100-phone
+  @media #{$phone} 
+    width: 100% !important
+.none
+  display: none
+
 .container 
   padding: 0 34px
+  @media #{$phone} 
+    padding: 0 10px
+  @media #{$tablet} 
+    padding: 0 15px
 
 .clearfix:after 
   visibility: hidden;
@@ -135,15 +154,21 @@ i + input, span + input
     ul 
       li 
         color: #c27dd3
+        position: relative
         font-weight: 600
         line-height: 34px
-        padding: 15px 0 15px 26px
+        padding: 15px 0 15px 25px
         font-size: $fourteen
         cursor: pointer
+        .more 
+          font-size: $eleven
+          position: absolute
+          right: 10px
+          top: 27px
         i 
           padding-right: 15px
         @media #{$tablet} 
-          padding: 15px 0 10px 32px
+          padding: 15px 0 10px 25px
           label { display: none }
       li.active
         background-color: rgba(76,19,103,0.5)
@@ -152,19 +177,28 @@ i + input, span + input
         padding: 15px 0 15px 19px
         border-left: 7px solid #65b32e
         @media #{$tablet}  
-          padding: 15px 0 10px 25px
-  #poweredby
-    position: absolute
-    bottom: 22px
-    text-align: center
-    width: 100%
-    @media #{$tablet} 
-      img 
-        width: 100%
+          padding: 15px 0 10px 19px
+
+#poweredby
+  position: absolute
+  bottom: 22px
+  text-align: center
+  width: 100%
+  @media #{$tablet} 
+    img 
+      width: 100%
+  @media #{$phone} 
+    display: block !important
+    position: fixed
+    background-color: #702283
+    bottom: 0
+    z-index: 5
 
 #right
   +side(100% - $left, #F4F7F8)
   min-height: 100%
+  @media #{$phone} 
+    padding-bottom: 55px
   @media #{$tablet} 
     +side(100% - $left-tablet, #F4F7F8)
   @media #{$phone} 
@@ -184,14 +218,37 @@ i + input, span + input
   #top 
     position: relative
     background-color: #FFFFFF
-    padding: 26px 0
     box-shadow: 0 1px 0 0 #C9C9C9
     .search
+      padding: 25.5px 0
       i 
         color: #EFA459
       input
         color: #8f9fae
         font-size: $fourteen
+    .user
+      border-left: 1px solid #C9C9C9;
+      .user-detail
+        display: inline-table
+        padding: 18px 12px
+        p 
+          margin: 0
+          padding: 1px 0
+        p.name 
+          font-size: $fourteen
+          color: #DF542A
+        p.auth
+          font-size: $eleven
+          color: #626272
+          +bold
+        p.more 
+          color: #CDCDCD
+          font-size: $eleven
+          position: absolute
+          bottom: 28px
+          right: 13px
+          cursor: pointer
+          +transform(90deg)
   #main 
     .invoice
       h1
@@ -218,12 +275,51 @@ i + input, span + input
           padding: 1px 0
         p.name 
           font-weight: bold
-          color: #626272;
+          color: #626272
         p.address, p.phonenumber
           font-size: $twelve
-          color: #8899AA;
+          color: #8899AA
         div 
           display: inline-table
+          div 
+            display: inline-table
+            border-right: 1px solid #F7F7F8
+            padding: 0 11px
+            h4 
+              font-size: $eleven
+              color: #626272
+              text-align: center
+              margin: 0
+              margin-bottom: 5px
+            select 
+              font-size: $eleven
+              border: 1px solid #C9C9C9
+              border-radius: 4px
+              padding: 9.5px 0 9.5px 12px
+              color: #8899AA
+              width: 111px
+          div:last-child
+            border: 0
+    #suply_action
+      .suply_action
+        button 
+          background-color: #8899AA
+          border-radius: 5px
+          border: 0
+          color: #FBFBFB
+          padding: 13px 19.5px
+          margin-top: 35px
+          cursor: pointer
+          font-size: $fourteen
+          @media #{$phone} 
+            margin-top: 0
+        @media #{$phone} 
+          margin-top: 15px
+          padding-bottom: 15px
+        button.back 
+          background-color: transparent
+          color: #626272
+          padding: 13px 40px 13px 0
           
     #addproduct
       position: relative
@@ -231,7 +327,7 @@ i + input, span + input
         color: #8899AA
         span 
           display: inline-table;
-          transform: rotate(90deg);
+          transform: rotate(90deg)
         input 
           font-size: $twelve
           color: #8899AA

@@ -14,6 +14,9 @@ input {
   font-family: Montserrat;
   border: 0; }
 
+select, button {
+  font-family: Montserrat; }
+
 *:focus {
   outline: none; }
 
@@ -35,8 +38,21 @@ i {
     display: none;
     width: 0% !important; } }
 
+@media (max-width: 1023px) {
+  .w100-phone {
+    width: 100% !important; } }
+
+.none {
+  display: none; }
+
 .container {
   padding: 0 34px; }
+  @media (max-width: 1023px) {
+    .container {
+      padding: 0 10px; } }
+  @media (min-width: 1024px) and (max-width: 1139px) {
+    .container {
+      padding: 0 15px; } }
 
 .clearfix:after {
   visibility: hidden;
@@ -66,7 +82,7 @@ i + input, span + input {
   top: 0; }
   @media (min-width: 1024px) and (max-width: 1139px) {
     #left {
-      width: 8%;
+      width: 6%;
       background-color: #702283;
       float: left; } }
   #left #logo {
@@ -78,16 +94,22 @@ i + input, span + input {
         width: 80%; } }
   #left nav ul li {
     color: #c27dd3;
+    position: relative;
     font-weight: 600;
     line-height: 34px;
-    padding: 15px 0 15px 26px;
+    padding: 15px 0 15px 25px;
     font-size: 87.5%;
     cursor: pointer; }
+    #left nav ul li .more {
+      font-size: 68.75%;
+      position: absolute;
+      right: 10px;
+      top: 27px; }
     #left nav ul li i {
       padding-right: 15px; }
     @media (min-width: 1024px) and (max-width: 1139px) {
       #left nav ul li {
-        padding: 15px 0 10px 32px; }
+        padding: 15px 0 10px 25px; }
         #left nav ul li label {
           display: none; } }
   #left nav ul li.active {
@@ -98,24 +120,35 @@ i + input, span + input {
     border-left: 7px solid #65b32e; }
     @media (min-width: 1024px) and (max-width: 1139px) {
       #left nav ul li.active {
-        padding: 15px 0 10px 25px; } }
-  #left #poweredby {
-    position: absolute;
-    bottom: 22px;
-    text-align: center;
-    width: 100%; }
-    @media (min-width: 1024px) and (max-width: 1139px) {
-      #left #poweredby img {
-        width: 100%; } }
+        padding: 15px 0 10px 19px; } }
+
+#poweredby {
+  position: absolute;
+  bottom: 22px;
+  text-align: center;
+  width: 100%; }
+  @media (min-width: 1024px) and (max-width: 1139px) {
+    #poweredby img {
+      width: 100%; } }
+  @media (max-width: 1023px) {
+    #poweredby {
+      display: block !important;
+      position: fixed;
+      background-color: #702283;
+      bottom: 0;
+      z-index: 5; } }
 
 #right {
   width: 83%;
   background-color: #F4F7F8;
   float: left;
   min-height: 100%; }
+  @media (max-width: 1023px) {
+    #right {
+      padding-bottom: 55px; } }
   @media (min-width: 1024px) and (max-width: 1139px) {
     #right {
-      width: 92%;
+      width: 94%;
       background-color: #F4F7F8;
       float: left; } }
   @media (max-width: 1023px) {
@@ -137,13 +170,39 @@ i + input, span + input {
   #right #top {
     position: relative;
     background-color: #FFFFFF;
-    padding: 26px 0;
     box-shadow: 0 1px 0 0 #C9C9C9; }
-    #right #top .search i {
-      color: #EFA459; }
-    #right #top .search input {
-      color: #8f9fae;
-      font-size: 87.5%; }
+    #right #top .search {
+      padding: 25.5px 0; }
+      #right #top .search i {
+        color: #EFA459; }
+      #right #top .search input {
+        color: #8f9fae;
+        font-size: 87.5%; }
+    #right #top .user {
+      border-left: 1px solid #C9C9C9; }
+      #right #top .user .user-detail {
+        display: inline-table;
+        padding: 18px 12px; }
+        #right #top .user .user-detail p {
+          margin: 0;
+          padding: 1px 0; }
+        #right #top .user .user-detail p.name {
+          font-size: 87.5%;
+          color: #DF542A; }
+        #right #top .user .user-detail p.auth {
+          font-size: 68.75%;
+          color: #626272;
+          font-weight: bold; }
+        #right #top .user .user-detail p.more {
+          color: #CDCDCD;
+          font-size: 68.75%;
+          position: absolute;
+          bottom: 28px;
+          right: 13px;
+          cursor: pointer;
+          -ms-transform: rotate(90deg) !important;
+          -webkit-transform: rotate(90deg) !important;
+          transform: rotate(90deg) !important; }
   #right #main .invoice h1 {
     font-size: 150%;
     font-weight: 300;
@@ -174,6 +233,45 @@ i + input, span + input {
     color: #8899AA; }
   #right #main #suply .suply div {
     display: inline-table; }
+    #right #main #suply .suply div div {
+      display: inline-table;
+      border-right: 1px solid #F7F7F8;
+      padding: 0 11px; }
+      #right #main #suply .suply div div h4 {
+        font-size: 68.75%;
+        color: #626272;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 5px; }
+      #right #main #suply .suply div div select {
+        font-size: 68.75%;
+        border: 1px solid #C9C9C9;
+        border-radius: 4px;
+        padding: 9.5px 0 9.5px 12px;
+        color: #8899AA;
+        width: 111px; }
+    #right #main #suply .suply div div:last-child {
+      border: 0; }
+  #right #main #suply_action .suply_action button {
+    background-color: #8899AA;
+    border-radius: 5px;
+    border: 0;
+    color: #FBFBFB;
+    padding: 13px 19.5px;
+    margin-top: 35px;
+    cursor: pointer;
+    font-size: 87.5%; }
+    @media (max-width: 1023px) {
+      #right #main #suply_action .suply_action button {
+        margin-top: 0; } }
+  @media (max-width: 1023px) {
+    #right #main #suply_action .suply_action {
+      margin-top: 15px;
+      padding-bottom: 15px; } }
+  #right #main #suply_action .suply_action button.back {
+    background-color: transparent;
+    color: #626272;
+    padding: 13px 40px 13px 0; }
   #right #main #addproduct {
     position: relative; }
     #right #main #addproduct .addproduct {
@@ -219,6 +317,9 @@ i + input, span + input {
           cursor: pointer; }
         #right #main #details div table tr td.details {
           max-width: 160px; }
+        #right #main #details div table tr td.setprice a {
+          text-align: center;
+          color: #CD171A; }
         #right #main #details div table tr:nth-child(odd) {
           background-color: #fcfcfc; }
   #right #main #remarks p {

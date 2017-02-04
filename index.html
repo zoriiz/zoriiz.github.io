@@ -17,12 +17,12 @@
   	  	<ul id="menu">
           <li><i class="icon-controls-purple"> </i><label>Dashboard</label></li>
           <li class="active"><i class="icon-shopping-cart-purple"> </i><label>Orders</label></li>
-          <li><i class="icon-factory-white"> </i><label>Companies</label></li>
+          <li><i class="icon-factory-white"> </i><label>Companies</label><i class="icon-arrow-purple more"></i></li>
           <li><i class="icon-box-purple"> </i><label>Products</label></li>
           <li><i class="icon-document-purple"> </i><label>Documents</label></li>
           <li><i class="icon-shopping-cart-purple"> </i><label>Pricing</label></li>
           <li><i class="icon-shapes-purple"> </i><label>Brands</label></li>
-          <li><i class="icon-gear-white"> </i><label>Settings</label></li>
+          <li><i class="icon-gear-white"> </i><label>Settings</label><i class="icon-arrow-purple more"></i></li>
           <li><i class="icon-chart-purple"> </i><label>Reports</label></li>
           <li><i class="icon-people-purple"> </i><label>Account Users</label></li>
         </ul>
@@ -32,11 +32,29 @@
       </div>
 
   	</div>
+    <div id="poweredby" class="none">
+        <img src="icons/poweredby.svg" alt="">
+      </div>
   	<div id="right">
       <div id="cover"></div>
   		<section id="top">
-        <div class="container">
-          <div class="search"><i class="icon-magnifying-glass"> </i><input type="text" data-inputname="top" placeholder="Search here"></div>
+        <div class="clearfix">
+          <div class="left">
+            <div class="container">
+              <div class="search"><i class="icon-magnifying-glass"> </i><input type="text" data-inputname="top" placeholder="Search here"></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="user">
+              <section class="user-detail">
+                <p class="name">Hello, Somchai</p>
+                <p class="auth">TWIN TYPES CORPORATION</p>
+              </section>
+              <section class="user-detail">
+                <p class="more"><i class="icon-arrow-purple"> </i></p>
+              </section>
+            </div>
+          </div>
         </div>
       </section>
       <section id="main">
@@ -44,14 +62,41 @@
 
           <div class="invoice"><h1><span class="order">Orders / </span><span class="invoice">TN SO 000015</span></h1></div>
           
-          <div id="suply" style="width: 70%">
-            <div class="suply clearfix">
-              <div class="left">
-                <p class="name">CPF Saraburi</p>
-                <p class="address">Highway 2, Kaeng Khoi Saraburi Thailand</p>
-                <p class="phonenumber">+66 087 348 79 34</p>
+          <div class="clearfix">
+            <div id="suply" class="left w100-phone" style="width: 70%">
+              <div class="suply clearfix">
+                <div class="left">
+                  <p class="name">CPF Saraburi</p>
+                  <p class="address">Highway 2, Kaeng Khoi Saraburi Thailand</p>
+                  <p class="phonenumber">+66 087 348 79 34</p>
+                </div>
+                <div class="right">
+                  <div>
+                    <h4>Type</h4>
+                    <select name="types" id="types">
+                      <option value="Retailers">Retailers</option>
+                    </select>
+                  </div>
+                  <div>
+                    <h4>Owned By</h4>
+                    <select name="owned" id="owned">
+                      <option value="Tom Hanks">Tom Hanks</option>
+                    </select>
+                  </div>
+                  <div>
+                    <h4>Status</h4>
+                    <select name="status" id="status">
+                      <option value="Pending">Pending</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <div class="right">sss</div>
+            </div>
+            <div id="suply_action" class="right">
+              <div class="suply_action">
+                <button class="back">Back</button>
+                <button class="update">Update Order</button>
+              </div>
             </div>
           </div>
 
@@ -81,11 +126,11 @@
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
 7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
-                <td>THB 880</td>
+                <td class="setprice">THB 880</td>
                 <td>30%</td>
-                <td>THB 660</td>
+                <td class="setprice">THB 660</td>
                 <td>16 <i class="icon-icon-edit"></i></td>
-                <td>THB 50,079,8823</td>
+                <td class="setprice">THB 50,079,8823</td>
                 <td class="remove" data-table="1">Remove Item</td>
               </tr>
               <tr class="table_2">
@@ -93,11 +138,11 @@
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
 7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
-                <td>THB 880</td>
+                <td class="setprice">THB 880</td>
                 <td>30%</td>
-                <td>THB 660</td>
+                <td class="setprice">THB 660</td>
                 <td>16 <i class="icon-icon-edit"></i></td>
-                <td>THB 50,079,8823</td>
+                <td class="setprice">THB 50,079,8823</td>
                 <td class="remove" data-table="2">Remove Item</td>
               </tr>
               <tr class="table_3">
@@ -105,11 +150,11 @@
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
 7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
-                <td>THB 880</td>
+                <td class="setprice">THB 880</td>
                 <td>30%</td>
-                <td>THB 660</td>
+                <td class="setprice">THB 660</td>
                 <td>16 <i class="icon-icon-edit"></i></td>
-                <td>THB 50,079,8823</td>
+                <td class="setprice">THB 50,079,8823</td>
                 <td class="remove" data-table="3">Remove Item</td>
               </tr>
               <tr class="table_4">
@@ -117,11 +162,11 @@
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
 7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
-                <td>THB 880</td>
+                <td class="setprice"><a href="">Set Price</a></td>
                 <td>30%</td>
-                <td>THB 660</td>
+                <td class="setprice"><a href="">Set Price</a></td>
                 <td>16 <i class="icon-icon-edit"></i></td>
-                <td>THB 50,079,8823</td>
+                <td class="setprice"><a href="">Set Price</a></td>
                 <td class="remove" data-table="4">Remove Item</td>
               </tr>
               <tr class="table_5">
@@ -129,11 +174,11 @@
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
 7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
-                <td>THB 880</td>
+                <td class="setprice">THB 880</td>
                 <td>30%</td>
-                <td>THB 660</td>
+                <td class="setprice">THB 660</td>
                 <td>16 <i class="icon-icon-edit"></i></td>
-                <td>THB 50,079,8823</td>
+                <td class="setprice">THB 50,079,8823</td>
                 <td class="remove" data-table="5">Remove Item</td>
               </tr>
               
