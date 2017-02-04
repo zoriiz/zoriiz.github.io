@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "untitled-font-2";
+  src:url("fonts/untitled-font-2.eot");
+  src:url("fonts/untitled-font-2.eot?#iefix") format("embedded-opentype"),
+    url("fonts/untitled-font-2.woff") format("woff"),
+    url("fonts/untitled-font-2.ttf") format("truetype"),
+    url("fonts/untitled-font-2.svg#untitled-font-2") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "untitled-font-2" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "untitled-font-2" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-purple:before {
+  content: "\61";
+}
+.icon-arrow-in-circle:before {
+  content: "\62";
+}
+.icon-box-purple:before {
+  content: "\63";
+}
+.icon-chart-purple:before {
+  content: "\64";
+}
+.icon-close-white:before {
+  content: "\65";
+}
+.icon-controls-purple:before {
+  content: "\66";
+}
+.icon-document-purple:before {
+  content: "\67";
+}
+.icon-icon-play:before {
+  content: "\68";
+}
+.icon-icon-phone:before {
+  content: "\69";
+}
+.icon-icon-plus:before {
+  content: "\6a";
+}
+.icon-icon-mail:before {
+  content: "\6b";
+}
+.icon-icon-linkedin:before {
+  content: "\6c";
+}
+.icon-icon-fb:before {
+  content: "\6d";
+}
+.icon-icon-favicon:before {
+  content: "\6e";
+}
+.icon-icon-edit:before {
+  content: "\6f";
+}
+.icon-hierarchy-white:before {
+  content: "\70";
+}
+.icon-gear-white:before {
+  content: "\71";
+}
+.icon-factory-white:before {
+  content: "\72";
+}
+.icon-icon-toggle-merged:before {
+  content: "\73";
+}
+.icon-icon-twitter:before {
+  content: "\74";
+}
+.icon-magnifying-glass:before {
+  content: "\75";
+}
+.icon-mandatory-star:before {
+  content: "\76";
+}
+.icon-noimage-placeholder:before {
+  content: "\77";
+}
+.icon-people-purple:before {
+  content: "\78";
+}
+.icon-pricing-label-purple:before {
+  content: "\79";
+}
+.icon-shapes-purple:before {
+  content: "\7a";
+}
+.icon-shopping-cart-purple:before {
+  content: "\41";
+}
+.icon-switch-off:before {
+  content: "\42";
+}
+.icon-tick-white:before {
+  content: "\43";
+}
