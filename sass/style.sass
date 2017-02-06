@@ -9,7 +9,7 @@ $twelve: 75%
 $fourteen: 87.5%
 $twentyfour: 150%
 $phone: "(max-width: 1023px)"
-$tablet: "(min-width: 1024px) and (max-width: 1139px)"
+$tablet: "(min-width: 1024px) and (max-width: 1439px)"
 $desktop: "(min-width: 1440px)"
 
 body
@@ -89,6 +89,40 @@ select, button
 i 
   vertical-align: middle
 
+=userstyle 
+  .user
+    background-color: #FFFFFF
+    border-left: 1px solid #C9C9C9;
+    .user-detail 
+      display: inline-table
+      padding: 18px 12px
+      p 
+        margin: 0
+        padding: 1px 0
+      p.name 
+        font-size: $fourteen
+        color: #DF542A
+      p.auth
+        font-size: $eleven
+        color: #626272
+        +bold
+      p.more 
+        color: #CDCDCD
+        font-size: $eleven
+        position: absolute
+        bottom: 28px
+        right: 13px
+        cursor: pointer
+        +transform(90deg)
+
+.visible-phone
+  @media #{$phone} 
+    display: block !important
+  @media #{$tablet} 
+    display: none !important
+  @media #{$desktop}
+    display: none !important 
+
 .hidden-phone
   @media #{$phone} 
     display: none
@@ -107,8 +141,12 @@ i
 .w100-phone
   @media #{$phone} 
     width: 100% !important
+
 .none
   display: none
+
+.center 
+  text-align: center 
 
 .container 
   padding: 0 34px
@@ -151,6 +189,11 @@ i + input, span + input
       img 
         width: 80%
   nav 
+    +userstyle
+    .user
+      border: 0
+      .user-detail
+        padding: 5px 0 5px 22px
     ul 
       li 
         color: #c27dd3
@@ -178,7 +221,6 @@ i + input, span + input
         border-left: 7px solid #65b32e
         @media #{$tablet}  
           padding: 15px 0 10px 19px
-
 #poweredby
   position: absolute
   bottom: 22px
@@ -226,30 +268,39 @@ i + input, span + input
       input
         color: #8f9fae
         font-size: $fourteen
-    .user
-      border-left: 1px solid #C9C9C9;
-      .user-detail
-        display: inline-table
-        padding: 18px 12px
-        p 
-          margin: 0
-          padding: 1px 0
-        p.name 
-          font-size: $fourteen
-          color: #DF542A
-        p.auth
-          font-size: $eleven
-          color: #626272
-          +bold
-        p.more 
-          color: #CDCDCD
-          font-size: $eleven
-          position: absolute
-          bottom: 28px
-          right: 13px
-          cursor: pointer
-          +transform(90deg)
+    +userstyle
+        
+  #top-phone
+    background-color: #702283
+    padding: 16px 0
+    position: fixed
+    top: 0
+    z-index: 5
+    width: 100%
+    .back, .search
+      color: #EFA459
+      cursor: pointer
+    .back 
+      +transform(180deg)
+    .title
+      color: #FFFFFF
+      font-weight: 300 !important
+    #search-box
+      display: none
+      background-color: #FFFFFF
+      position: absolute
+      bottom: -50
+      width: 100%
+      box-shadow: 0 1px 0 0 #C9C9C9
+      .search-box
+        padding: 16px 20px
+        input
+          width: 100%
+
+
   #main 
+    @media #{$phone} 
+      padding-top: 77px
     .invoice
       h1
         +h1(300)
@@ -262,13 +313,68 @@ i + input, span + input
       color: #333333
       padding: 4px 0
       font-size: $twelve
+    
+    #estimate
+      position: fixed
+      border: 0 !important
+      z-index: 3
+      bottom: 0
+      right: 34px
+      box-shadow: 0 2px 14px 0 rgba(0,0,0,0.12)
+      @media #{$phone} 
+        position: relative
+        right: 0
+        box-shadow: 0 0 0 0 
+        border: 1px solid #C3C8CD !important
+      .estimate
+        .date, .summary, .total
+          padding: 13px 18px
+          span 
+            font-size: $fourteen
+            color: #626272
+            +bold
+          span.left 
+            padding: 7px 0
+          span.right 
+            color: #8899AA
+            text-align: right
+            input 
+              border: 1px solid #8899AA
+              border-radius: 2px
+              text-align: center
+              width: 80%
+              padding: 8px 0
+              font-size: $twelve
+        .date 
+          border-bottom: 1px solid #F1F0F4
+        .total 
+          border-top: 1px solid #F1F0F4
+          span.right 
+            font-size: 24px
+            color: #626272
+        .summary
+          div + div 
+            padding-top: 4px
+          span.sub-total 
+            font-size: 100%
+          span.tax 
+            text-align: right
+            font-size: $twelve
+            input 
+              border: 1px solid #8899AA
+              border-radius: 2px
+              text-align: center
+              width: 18%
+              padding: 8px 1px
 
-    #addproduct, #remarks, #suply
+
+    #addproduct, #remarks, #suply, #estimate
       +boxwhite
       .addproduct, .suply 
         margin: 17px 14px
 
     #suply 
+      width: 75%
       .suply 
         p 
           margin: 0
@@ -285,6 +391,10 @@ i + input, span + input
             display: inline-table
             border-right: 1px solid #F7F7F8
             padding: 0 11px
+            &:first-child
+              padding-left: 0
+            &:last-child
+              padding-right: 0
             h4 
               font-size: $eleven
               color: #626272
@@ -298,6 +408,7 @@ i + input, span + input
               padding: 9.5px 0 9.5px 12px
               color: #8899AA
               width: 111px
+
           div:last-child
             border: 0
     #suply_action

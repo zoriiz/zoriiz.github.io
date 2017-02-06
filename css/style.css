@@ -24,11 +24,23 @@ i {
   vertical-align: middle; }
 
 @media (max-width: 1023px) {
+  .visible-phone {
+    display: block !important; } }
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .visible-phone {
+    display: none !important; } }
+
+@media (min-width: 1440px) {
+  .visible-phone {
+    display: none !important; } }
+
+@media (max-width: 1023px) {
   .hidden-phone {
     display: none;
     width: 0% !important; } }
 
-@media (min-width: 1024px) and (max-width: 1139px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .hidden-tablet {
     display: none;
     width: 0% !important; } }
@@ -45,12 +57,15 @@ i {
 .none {
   display: none; }
 
+.center {
+  text-align: center; }
+
 .container {
   padding: 0 34px; }
   @media (max-width: 1023px) {
     .container {
       padding: 0 10px; } }
-  @media (min-width: 1024px) and (max-width: 1139px) {
+  @media (min-width: 1024px) and (max-width: 1439px) {
     .container {
       padding: 0 15px; } }
 
@@ -80,7 +95,7 @@ i + input, span + input {
   position: fixed;
   left: 0;
   top: 0; }
-  @media (min-width: 1024px) and (max-width: 1139px) {
+  @media (min-width: 1024px) and (max-width: 1439px) {
     #left {
       width: 6%;
       background-color: #702283;
@@ -89,9 +104,39 @@ i + input, span + input {
     padding: 19px 0;
     background-color: #4C1367;
     text-align: center; }
-    @media (min-width: 1024px) and (max-width: 1139px) {
+    @media (min-width: 1024px) and (max-width: 1439px) {
       #left #logo img {
         width: 80%; } }
+  #left nav .user {
+    background-color: #FFFFFF;
+    border-left: 1px solid #C9C9C9; }
+    #left nav .user .user-detail {
+      display: inline-table;
+      padding: 18px 12px; }
+      #left nav .user .user-detail p {
+        margin: 0;
+        padding: 1px 0; }
+      #left nav .user .user-detail p.name {
+        font-size: 87.5%;
+        color: #DF542A; }
+      #left nav .user .user-detail p.auth {
+        font-size: 68.75%;
+        color: #626272;
+        font-weight: bold; }
+      #left nav .user .user-detail p.more {
+        color: #CDCDCD;
+        font-size: 68.75%;
+        position: absolute;
+        bottom: 28px;
+        right: 13px;
+        cursor: pointer;
+        -ms-transform: rotate(90deg) !important;
+        -webkit-transform: rotate(90deg) !important;
+        transform: rotate(90deg) !important; }
+  #left nav .user {
+    border: 0; }
+    #left nav .user .user-detail {
+      padding: 5px 0 5px 22px; }
   #left nav ul li {
     color: #c27dd3;
     position: relative;
@@ -107,7 +152,7 @@ i + input, span + input {
       top: 27px; }
     #left nav ul li i {
       padding-right: 15px; }
-    @media (min-width: 1024px) and (max-width: 1139px) {
+    @media (min-width: 1024px) and (max-width: 1439px) {
       #left nav ul li {
         padding: 15px 0 10px 25px; }
         #left nav ul li label {
@@ -118,7 +163,7 @@ i + input, span + input {
     color: #FFFFFF;
     padding: 15px 0 15px 19px;
     border-left: 7px solid #65b32e; }
-    @media (min-width: 1024px) and (max-width: 1139px) {
+    @media (min-width: 1024px) and (max-width: 1439px) {
       #left nav ul li.active {
         padding: 15px 0 10px 19px; } }
 
@@ -127,7 +172,7 @@ i + input, span + input {
   bottom: 22px;
   text-align: center;
   width: 100%; }
-  @media (min-width: 1024px) and (max-width: 1139px) {
+  @media (min-width: 1024px) and (max-width: 1439px) {
     #poweredby img {
       width: 100%; } }
   @media (max-width: 1023px) {
@@ -146,7 +191,7 @@ i + input, span + input {
   @media (max-width: 1023px) {
     #right {
       padding-bottom: 55px; } }
-  @media (min-width: 1024px) and (max-width: 1139px) {
+  @media (min-width: 1024px) and (max-width: 1439px) {
     #right {
       width: 94%;
       background-color: #F4F7F8;
@@ -179,6 +224,7 @@ i + input, span + input {
         color: #8f9fae;
         font-size: 87.5%; }
     #right #top .user {
+      background-color: #FFFFFF;
       border-left: 1px solid #C9C9C9; }
       #right #top .user .user-detail {
         display: inline-table;
@@ -203,6 +249,37 @@ i + input, span + input {
           -ms-transform: rotate(90deg) !important;
           -webkit-transform: rotate(90deg) !important;
           transform: rotate(90deg) !important; }
+  #right #top-phone {
+    background-color: #702283;
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%; }
+    #right #top-phone .back, #right #top-phone .search {
+      color: #EFA459;
+      cursor: pointer; }
+    #right #top-phone .back {
+      -ms-transform: rotate(180deg) !important;
+      -webkit-transform: rotate(180deg) !important;
+      transform: rotate(180deg) !important; }
+    #right #top-phone .title {
+      color: #FFFFFF;
+      font-weight: 300 !important; }
+    #right #top-phone #search-box {
+      display: none;
+      background-color: #FFFFFF;
+      position: absolute;
+      bottom: -50;
+      width: 100%;
+      box-shadow: 0 1px 0 0 #C9C9C9; }
+      #right #top-phone #search-box .search-box {
+        padding: 16px 20px; }
+        #right #top-phone #search-box .search-box input {
+          width: 100%; }
+  @media (max-width: 1023px) {
+    #right #main {
+      padding-top: 77px; } }
   #right #main .invoice h1 {
     font-size: 150%;
     font-weight: 300;
@@ -215,43 +292,100 @@ i + input, span + input {
     color: #333333;
     padding: 4px 0;
     font-size: 75%; }
-  #right #main #addproduct, #right #main #remarks, #right #main #suply {
+  #right #main #estimate {
+    position: fixed;
+    border: 0 !important;
+    z-index: 3;
+    bottom: 0;
+    right: 34px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.12); }
+    @media (max-width: 1023px) {
+      #right #main #estimate {
+        position: relative;
+        right: 0;
+        box-shadow: 0 0 0 0;
+        border: 1px solid #C3C8CD !important; } }
+    #right #main #estimate .estimate .date, #right #main #estimate .estimate .summary, #right #main #estimate .estimate .total {
+      padding: 13px 18px; }
+      #right #main #estimate .estimate .date span, #right #main #estimate .estimate .summary span, #right #main #estimate .estimate .total span {
+        font-size: 87.5%;
+        color: #626272;
+        font-weight: bold; }
+      #right #main #estimate .estimate .date span.left, #right #main #estimate .estimate .summary span.left, #right #main #estimate .estimate .total span.left {
+        padding: 7px 0; }
+      #right #main #estimate .estimate .date span.right, #right #main #estimate .estimate .summary span.right, #right #main #estimate .estimate .total span.right {
+        color: #8899AA;
+        text-align: right; }
+        #right #main #estimate .estimate .date span.right input, #right #main #estimate .estimate .summary span.right input, #right #main #estimate .estimate .total span.right input {
+          border: 1px solid #8899AA;
+          border-radius: 2px;
+          text-align: center;
+          width: 80%;
+          padding: 8px 0;
+          font-size: 75%; }
+    #right #main #estimate .estimate .date {
+      border-bottom: 1px solid #F1F0F4; }
+    #right #main #estimate .estimate .total {
+      border-top: 1px solid #F1F0F4; }
+      #right #main #estimate .estimate .total span.right {
+        font-size: 24px;
+        color: #626272; }
+    #right #main #estimate .estimate .summary div + div {
+      padding-top: 4px; }
+    #right #main #estimate .estimate .summary span.sub-total {
+      font-size: 100%; }
+    #right #main #estimate .estimate .summary span.tax {
+      text-align: right;
+      font-size: 75%; }
+      #right #main #estimate .estimate .summary span.tax input {
+        border: 1px solid #8899AA;
+        border-radius: 2px;
+        text-align: center;
+        width: 18%;
+        padding: 8px 1px; }
+  #right #main #addproduct, #right #main #remarks, #right #main #suply, #right #main #estimate {
     background-color: #FFFFFF;
     border: 1px solid #C3C8CD;
     border-radius: 3px;
     margin-bottom: 14px; }
-    #right #main #addproduct .addproduct, #right #main #addproduct .suply, #right #main #remarks .addproduct, #right #main #remarks .suply, #right #main #suply .addproduct, #right #main #suply .suply {
+    #right #main #addproduct .addproduct, #right #main #addproduct .suply, #right #main #remarks .addproduct, #right #main #remarks .suply, #right #main #suply .addproduct, #right #main #suply .suply, #right #main #estimate .addproduct, #right #main #estimate .suply {
       margin: 17px 14px; }
-  #right #main #suply .suply p {
-    margin: 0;
-    padding: 1px 0; }
-  #right #main #suply .suply p.name {
-    font-weight: bold;
-    color: #626272; }
-  #right #main #suply .suply p.address, #right #main #suply .suply p.phonenumber {
-    font-size: 75%;
-    color: #8899AA; }
-  #right #main #suply .suply div {
-    display: inline-table; }
-    #right #main #suply .suply div div {
-      display: inline-table;
-      border-right: 1px solid #F7F7F8;
-      padding: 0 11px; }
-      #right #main #suply .suply div div h4 {
-        font-size: 68.75%;
-        color: #626272;
-        text-align: center;
-        margin: 0;
-        margin-bottom: 5px; }
-      #right #main #suply .suply div div select {
-        font-size: 68.75%;
-        border: 1px solid #C9C9C9;
-        border-radius: 4px;
-        padding: 9.5px 0 9.5px 12px;
-        color: #8899AA;
-        width: 111px; }
-    #right #main #suply .suply div div:last-child {
-      border: 0; }
+  #right #main #suply {
+    width: 75%; }
+    #right #main #suply .suply p {
+      margin: 0;
+      padding: 1px 0; }
+    #right #main #suply .suply p.name {
+      font-weight: bold;
+      color: #626272; }
+    #right #main #suply .suply p.address, #right #main #suply .suply p.phonenumber {
+      font-size: 75%;
+      color: #8899AA; }
+    #right #main #suply .suply div {
+      display: inline-table; }
+      #right #main #suply .suply div div {
+        display: inline-table;
+        border-right: 1px solid #F7F7F8;
+        padding: 0 11px; }
+        #right #main #suply .suply div div:first-child {
+          padding-left: 0; }
+        #right #main #suply .suply div div:last-child {
+          padding-right: 0; }
+        #right #main #suply .suply div div h4 {
+          font-size: 68.75%;
+          color: #626272;
+          text-align: center;
+          margin: 0;
+          margin-bottom: 5px; }
+        #right #main #suply .suply div div select {
+          font-size: 68.75%;
+          border: 1px solid #C9C9C9;
+          border-radius: 4px;
+          padding: 9.5px 0 9.5px 12px;
+          color: #8899AA;
+          width: 111px; }
+      #right #main #suply .suply div div:last-child {
+        border: 0; }
   #right #main #suply_action .suply_action button {
     background-color: #8899AA;
     border-radius: 5px;

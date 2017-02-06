@@ -8,12 +8,17 @@
     <script src="js/application.js"></script>
   </head>
   <body>
-  
   	<div id="left" class="hidden-phone">
   	  <div id="logo">
   	  	<img src="icons/logo.svg" alt="">
   	  </div>
   	  <nav>
+        <div class="user visible-phone">
+          <section class="user-detail">
+            <p class="name">Hello, Somchai</p>
+            <p class="auth">TWIN TYPES CORPORATION</p>
+          </section>
+        </div>
   	  	<ul id="menu">
           <li><i class="icon-controls-purple"> </i><label>Dashboard</label></li>
           <li class="active"><i class="icon-shopping-cart-purple"> </i><label>Orders</label></li>
@@ -30,14 +35,13 @@
       <div id="poweredby">
         <img src="icons/poweredby.svg" alt="">
       </div>
-
   	</div>
     <div id="poweredby" class="none">
         <img src="icons/poweredby.svg" alt="">
       </div>
   	<div id="right">
       <div id="cover"></div>
-  		<section id="top">
+  		<section id="top" class="hidden-phone">
         <div class="clearfix">
           <div class="left">
             <div class="container">
@@ -57,13 +61,23 @@
           </div>
         </div>
       </section>
+      <section id="top-phone" class="visible-phone none">
+        <div class="container clearfix center">
+         <span class="left back"><i class="icon-arrow-purple"></i></span>
+         <span class="title">Edit ORD07070707</span>
+         <span class="right search"><i class="icon-magnifying-glass"></i></span>
+        </div>  
+        <div id="search-box">
+          <div class="search-box">
+            <input type="text" data-inputname="top" class="searchbox" placeholder="Search here">
+          </div>
+        </div>
+      </section>
       <section id="main">
         <div class="container">
-
-          <div class="invoice"><h1><span class="order">Orders / </span><span class="invoice">TN SO 000015</span></h1></div>
-          
+          <div class="invoice hidden-phone"><h1><span class="order">Orders / </span><span class="invoice">TN SO 000015</span></h1></div>
           <div class="clearfix">
-            <div id="suply" class="left w100-phone" style="width: 70%">
+            <div id="suply" class="left w100-phone">
               <div class="suply clearfix">
                 <div class="left">
                   <p class="name">CPF Saraburi</p>
@@ -94,15 +108,46 @@
             </div>
             <div id="suply_action" class="right">
               <div class="suply_action">
-                <button class="back">Back</button>
+                <button class="back hidden-phone">Back</button>
                 <button class="update">Update Order</button>
+              </div>
+            </div>
+          </div>
+          
+          <div id="estimate">
+            <div class="estimate">
+              <div class="date clearfix">
+                <span class="left">Estimated Delivery Date </span>
+                <span class="right"><input type="text" placeholder="14-04-2016"></span>
+              </div>
+              <div class="summary">
+                <div class="clearfix">
+                  <span class="left">Sub-total</span>
+                  <span class="right sub-total">40,033</span>
+                </div>
+                <div class="clearfix">
+                  <span class="left">Shipping</span>
+                  <span class="right"><input type="text" placeholder="0"></span>
+                </div>
+                <div class="clearfix">
+                  <span class="left">Special Discount</span>
+                  <span class="right"><input type="text" placeholder="9,999.999"></span>
+                </div>
+                <div class="clearfix">
+                  <span class="left">Tax</span>
+                  <span class="right tax"><input type="text" placeholder="7"> %  1,826.00</span>
+                </div>
+              </div>
+              <div class="total clearfix">
+                <span class="left">Total</span>
+                <span class="right">THB 41,585.31</span>
               </div>
             </div>
           </div>
 
           <div id="addproduct">
             <div class="addproduct">
-              <span id="icon-icon-plus"><i class="icon-icon-plus"> </i></span><input type="text" action="toggle" name="addproduct" data-inputname="addproduct" placeholder="Add Products">
+              <span id="icon-addpro"><i class="icon-icon-plus"> </i></span><input type="text" action="toggle" name="addproduct" data-inputname="addproduct" placeholder="Add Products">
             </div>
           </div>
 
@@ -124,7 +169,7 @@
               <tr class="table_1">
                 <td class="sku">TN SO 000015</td>
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
-7.5 HP)\, control voltage 230 Vac</td>
+                  7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
                 <td class="setprice">THB 880</td>
                 <td>30%</td>
@@ -136,7 +181,7 @@
               <tr class="table_2">
                 <td class="sku">TN SO 000015</td>
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
-7.5 HP)\, control voltage 230 Vac</td>
+                  7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
                 <td class="setprice">THB 880</td>
                 <td>30%</td>
@@ -148,7 +193,7 @@
               <tr class="table_3">
                 <td class="sku">TN SO 000015</td>
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
-7.5 HP)\, control voltage 230 Vac</td>
+                  7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
                 <td class="setprice">THB 880</td>
                 <td>30%</td>
@@ -160,7 +205,7 @@
               <tr class="table_4">
                 <td class="sku">TN SO 000015</td>
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
-7.5 HP)\, control voltage 230 Vac</td>
+                  7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
                 <td class="setprice"><a href="">Set Price</a></td>
                 <td>30%</td>
@@ -172,7 +217,7 @@
               <tr class="table_5">
                 <td class="sku">TN SO 000015</td>
                 <td class="details">Magnetic contactor - 9A (5.5 kW\, 
-7.5 HP)\, control voltage 230 Vac</td>
+                  7.5 HP)\, control voltage 230 Vac</td>
                 <td>Schneider Electric</td>
                 <td class="setprice">THB 880</td>
                 <td>30%</td>
@@ -181,12 +226,9 @@
                 <td class="setprice">THB 50,079,8823</td>
                 <td class="remove" data-table="5">Remove Item</td>
               </tr>
-              
             </table>
-
             </div>
           </div>
-
           <h2>Remarks</h2>
           <div id="remarks">
             <p>When you enter into any new area of science, you almost always find yourself with a baffling new language of technical terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope. So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able to talk to them more intelligently. </p>
