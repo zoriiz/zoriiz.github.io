@@ -5,7 +5,7 @@ $(document).ready(function(){
   })
   $("input[action='toggle']").click(function(){
     var input_name = $(this).data("inputname")
-    togglecover(true,input_name,true,"icon-addpro",false,"")
+    togglecover(true,input_name,1,true,"icon-addpro",false,"")
     iconrotate("icon-addpro", 45)
     effectinput(input_name)
   })
@@ -13,14 +13,21 @@ $(document).ready(function(){
 
     $("#search-box").css('display','block')
 
-    togglecover(false,"",false,"",true,"search-box")
+    togglecover(false,"", '', false,"",true,"search-box")
 
     $("input.searchbox").focus()
   })
   function effectinput(indname){
     $("#"+indname).css('z-index','9999')
   }
-  function togglecover(returnzindex, indname, resetrotate, rotatename, togglestuff, stuffid){
+  $(".menu_back").click(function(){
+    $('#left').css('display','block')
+    $('#top-phone, .poweredby-phone').css('z-index',3)
+
+    togglecover(true, "top-phone, .poweredby-phone", 10, false, "", true, "left")
+  })
+
+  function togglecover(returnzindex, indname, zindex, resetrotate, rotatename, togglestuff, stuffid){
     $('#cover').css('display','block')
     $('body').css('overflow','hidden')
 
@@ -31,7 +38,7 @@ $(document).ready(function(){
         removerotate(rotatename, 45)  
       }
       if(returnzindex == true) {
-        $("#"+indname).css('z-index','1')
+        $("#"+indname).css('z-index',zindex)
       }
       if(togglestuff == true) {
         $("#"+stuffid).css('display','none')
@@ -57,7 +64,11 @@ jQuery(function($){
   function leftpad(){
     var $left = $("#left");
     var leftwidth = $left.width();
-    $("#right").css("padding-left",leftwidth);
+    if($(window).width() > 1023) {
+      $("#right").css("padding-left",leftwidth);
+    } else {
+      $("#right").css("padding-left",0);
+    }
   }
   $(window).resize(leftpad);
   leftpad();

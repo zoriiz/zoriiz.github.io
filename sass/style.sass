@@ -2,6 +2,7 @@
 
 $left: 17%
 $left-tablet: 6%
+$left-phone: 70%
 $eight: 50%
 $eleven: 68.75%
 $ten: 62.5%
@@ -126,17 +127,14 @@ i
 .hidden-phone
   @media #{$phone} 
     display: none
-    width: 0% !important
 
 .hidden-tablet
   @media #{$tablet} 
     display: none
-    width: 0% !important
 
 .hidden-desktop
   @media #{$desktop} 
     display: none
-    width: 0% !important
 
 .w100-phone
   @media #{$phone} 
@@ -175,12 +173,14 @@ i + input, span + input
 #left
   +side($left, #702283)
   height: 100%
-  z-index: 5
+  z-index: 10
   position: fixed
   left: 0
   top: 0
   @media #{$tablet} 
     +side($left-tablet, #702283)
+  @media #{$phone} 
+    +side($left-phone, #702283)
   #logo
     padding: 19px 0
     background-color: #4C1367
@@ -229,11 +229,13 @@ i + input, span + input
   @media #{$tablet} 
     img 
       width: 100%
+  
+.poweredby-phone
   @media #{$phone} 
     display: block !important
-    position: fixed
+    position: fixed !important
     background-color: #702283
-    bottom: 0
+    bottom: 0 !important
     z-index: 5
 
 #right
@@ -317,7 +319,7 @@ i + input, span + input
     #estimate
       position: fixed
       border: 0 !important
-      z-index: 3
+      z-index: 2
       bottom: 0
       right: 34px
       box-shadow: 0 2px 14px 0 rgba(0,0,0,0.12)

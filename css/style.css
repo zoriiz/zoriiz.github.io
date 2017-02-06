@@ -37,18 +37,15 @@ i {
 
 @media (max-width: 1023px) {
   .hidden-phone {
-    display: none;
-    width: 0% !important; } }
+    display: none; } }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .hidden-tablet {
-    display: none;
-    width: 0% !important; } }
+    display: none; } }
 
 @media (min-width: 1440px) {
   .hidden-desktop {
-    display: none;
-    width: 0% !important; } }
+    display: none; } }
 
 @media (max-width: 1023px) {
   .w100-phone {
@@ -91,13 +88,18 @@ i + input, span + input {
   background-color: #702283;
   float: left;
   height: 100%;
-  z-index: 5;
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 0; }
   @media (min-width: 1024px) and (max-width: 1439px) {
     #left {
       width: 6%;
+      background-color: #702283;
+      float: left; } }
+  @media (max-width: 1023px) {
+    #left {
+      width: 70%;
       background-color: #702283;
       float: left; } }
   #left #logo {
@@ -175,13 +177,14 @@ i + input, span + input {
   @media (min-width: 1024px) and (max-width: 1439px) {
     #poweredby img {
       width: 100%; } }
-  @media (max-width: 1023px) {
-    #poweredby {
-      display: block !important;
-      position: fixed;
-      background-color: #702283;
-      bottom: 0;
-      z-index: 5; } }
+
+@media (max-width: 1023px) {
+  .poweredby-phone {
+    display: block !important;
+    position: fixed !important;
+    background-color: #702283;
+    bottom: 0 !important;
+    z-index: 5; } }
 
 #right {
   width: 83%;
@@ -295,7 +298,7 @@ i + input, span + input {
   #right #main #estimate {
     position: fixed;
     border: 0 !important;
-    z-index: 3;
+    z-index: 2;
     bottom: 0;
     right: 34px;
     box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.12); }
