@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'animate';
 
 $left: 17%
 $left-tablet: 6%
@@ -9,7 +10,8 @@ $ten: 62.5%
 $twelve: 75%
 $fourteen: 87.5%
 $twentyfour: 150%
-$phone: "(max-width: 1023px)"
+$phone: "(max-width: 425px)"
+$pablet: "(max-width: 1023px)"
 $tablet: "(min-width: 1024px) and (max-width: 1439px)"
 $desktop: "(min-width: 1440px)"
 
@@ -117,7 +119,7 @@ i
         +transform(90deg)
 
 .visible-phone
-  @media #{$phone} 
+  @media #{$pablet} 
     display: block !important
   @media #{$tablet} 
     display: none !important
@@ -125,7 +127,7 @@ i
     display: none !important 
 
 .hidden-phone
-  @media #{$phone} 
+  @media #{$pablet} 
     display: none
 
 .hidden-tablet
@@ -137,7 +139,7 @@ i
     display: none
 
 .w100-phone
-  @media #{$phone} 
+  @media #{$pablet} 
     width: 100% !important
 
 .none
@@ -148,7 +150,7 @@ i
 
 .container 
   padding: 0 34px
-  @media #{$phone} 
+  @media #{$pablet} 
     padding: 0 10px
   @media #{$tablet} 
     padding: 0 15px
@@ -177,9 +179,10 @@ i + input, span + input
   position: fixed
   left: 0
   top: 0
+  overflow-x: auto
   @media #{$tablet} 
     +side($left-tablet, #702283)
-  @media #{$phone} 
+  @media #{$pablet} 
     +side($left-phone, #702283)
   #logo
     padding: 19px 0
@@ -229,23 +232,24 @@ i + input, span + input
   @media #{$tablet} 
     img 
       width: 100%
-  
+  @media #{$pablet}
+    position: relative
+    margin-top: 25px
 .poweredby-phone
-  @media #{$phone} 
+  @media #{$pablet} 
     display: block !important
     position: fixed !important
     background-color: #702283
     bottom: 0 !important
     z-index: 5
-
 #right
   +side(100% - $left, #F4F7F8)
   min-height: 100%
-  @media #{$phone} 
+  @media #{$pablet} 
     padding-bottom: 55px
   @media #{$tablet} 
     +side(100% - $left-tablet, #F4F7F8)
-  @media #{$phone} 
+  @media #{$pablet} 
     +side(100%, #F4F7F8)
   #cover  
     background-color: rgba(0,0,0,0.5)
@@ -258,7 +262,6 @@ i + input, span + input
     display: none
     width: 100%
     height: 100vh
-
   #top 
     position: relative
     background-color: #FFFFFF
@@ -271,7 +274,6 @@ i + input, span + input
         color: #8f9fae
         font-size: $fourteen
     +userstyle
-        
   #top-phone
     background-color: #702283
     padding: 16px 0
@@ -298,11 +300,11 @@ i + input, span + input
         padding: 16px 20px
         input
           width: 100%
-
-
   #main 
-    @media #{$phone} 
+    @media #{$pablet} 
       padding-top: 77px
+    @media #{$phone}
+      padding-top: 35px
     .invoice
       h1
         +h1(300)
@@ -315,7 +317,6 @@ i + input, span + input
       color: #333333
       padding: 4px 0
       font-size: $twelve
-    
     #estimate
       position: fixed
       border: 0 !important
@@ -323,12 +324,13 @@ i + input, span + input
       bottom: 0
       right: 34px
       box-shadow: 0 2px 14px 0 rgba(0,0,0,0.12)
-      @media #{$phone} 
+      @media #{$pablet} 
         position: relative
         right: 0
         box-shadow: 0 0 0 0 
         border: 1px solid #C3C8CD !important
       .estimate
+
         .date, .summary, .total
           padding: 13px 18px
           span 
@@ -375,8 +377,12 @@ i + input, span + input
       .addproduct, .suply 
         margin: 17px 14px
 
-    #suply 
+    #suply  
       width: 75%
+      @media #{$phone}
+        background-color: transparent
+        border: 0
+        margin-bottom: 0
       .suply 
         p 
           margin: 0
@@ -387,12 +393,27 @@ i + input, span + input
         p.address, p.phonenumber
           font-size: $twelve
           color: #8899AA
+        @media #{$phone}
+          margin: 17px 0
+          .right, .left 
+            width: 100%
+          .left
+            background-color: #FFFFFF
+            margin-left: -10px
+            padding-right: 20px
+            box-shadow: 0 -1px 3px 0 rgba(0,0,0,0.11), 0 2px 3px 0 rgba(98,98,114,0.21)
+            div 
+              text-align: center
         div 
           display: inline-table
           div 
             display: inline-table
             border-right: 1px solid #F7F7F8
             padding: 0 11px
+            @media #{$phone}
+              width: 100%
+              border: 0 
+              padding: 10px 0
             &:first-child
               padding-left: 0
             &:last-child
@@ -403,6 +424,8 @@ i + input, span + input
               text-align: center
               margin: 0
               margin-bottom: 5px
+              @media #{$phone}
+                text-align: left
             select 
               font-size: $eleven
               border: 1px solid #C9C9C9
@@ -410,6 +433,9 @@ i + input, span + input
               padding: 9.5px 0 9.5px 12px
               color: #8899AA
               width: 111px
+              @media #{$phone}
+                width: 100%
+                padding: 9.5px 0
 
           div:last-child
             border: 0
@@ -424,11 +450,13 @@ i + input, span + input
           margin-top: 35px
           cursor: pointer
           font-size: $fourteen
-          @media #{$phone} 
+          @media #{$pablet} 
             margin-top: 0
-        @media #{$phone} 
+        @media #{$pablet} 
           margin-top: 15px
           padding-bottom: 15px
+        @media #{$phone}
+          margin-top: 0
         button.back 
           background-color: transparent
           color: #626272
@@ -447,6 +475,7 @@ i + input, span + input
           width: 70%
     #details
       +boxwhite
+      overflow-x: auto
       div 
         position: relative
         +table

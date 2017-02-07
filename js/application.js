@@ -17,6 +17,8 @@ $(document).ready(function(){
 
     $("input.searchbox").focus()
   })
+
+
   function effectinput(indname){
     $("#"+indname).css('z-index','9999')
   }
@@ -65,11 +67,38 @@ jQuery(function($){
     var $left = $("#left");
     var leftwidth = $left.width();
     if($(window).width() > 1023) {
-      $("#right").css("padding-left",leftwidth);
+      $("#right").css("padding-left",leftwidth)
+      $("#left").css("display","block")
     } else {
-      $("#right").css("padding-left",0);
+      $("#right").css("padding-left",0)
+      $("#left").css("display","none")
     }
   }
   $(window).resize(leftpad);
   leftpad();
 });
+
+jQuery(function($){
+  function inputeffect(){
+    var delay = (function(){
+      var timer = 0;
+      return function(callback, ms){
+        clearTimeout (timer)
+        timer = setTimeout(callback, ms)
+      }
+    })()
+    $("#input_addproduct").keypress('input', function() {
+      $('#icon-addpro').addClass('animated infinite zoomIn')
+      // $('#icon-addpro > i').removeClass('icon-icon-plus')
+      // $('#icon-addpro > i').addClass('icon-controls-purple')
+    })
+    $("#input_addproduct").keyup('input', function() {
+      delay(function(){
+        $('#icon-addpro').removeClass('animated infinite zoomIn')
+        // $('#icon-addpro > i').removeClass('icon-controls-purple')
+        // $('#icon-addpro > i').addClass('icon-icon-plus')
+      }, 300 )
+    })
+  }
+  inputeffect()
+})

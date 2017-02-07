@@ -5,6 +5,36 @@ ol {
   margin: 0;
   padding: 0; }
 
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn; }
+
 body {
   font-family: Montserrat;
   font-size: 1em;
@@ -91,7 +121,8 @@ i + input, span + input {
   z-index: 10;
   position: fixed;
   left: 0;
-  top: 0; }
+  top: 0;
+  overflow-x: auto; }
   @media (min-width: 1024px) and (max-width: 1439px) {
     #left {
       width: 6%;
@@ -177,6 +208,10 @@ i + input, span + input {
   @media (min-width: 1024px) and (max-width: 1439px) {
     #poweredby img {
       width: 100%; } }
+  @media (max-width: 1023px) {
+    #poweredby {
+      position: relative;
+      margin-top: 25px; } }
 
 @media (max-width: 1023px) {
   .poweredby-phone {
@@ -283,6 +318,9 @@ i + input, span + input {
   @media (max-width: 1023px) {
     #right #main {
       padding-top: 77px; } }
+  @media (max-width: 425px) {
+    #right #main {
+      padding-top: 35px; } }
   #right #main .invoice h1 {
     font-size: 150%;
     font-weight: 300;
@@ -355,6 +393,11 @@ i + input, span + input {
       margin: 17px 14px; }
   #right #main #suply {
     width: 75%; }
+    @media (max-width: 425px) {
+      #right #main #suply {
+        background-color: transparent;
+        border: 0;
+        margin-bottom: 0; } }
     #right #main #suply .suply p {
       margin: 0;
       padding: 1px 0; }
@@ -364,12 +407,29 @@ i + input, span + input {
     #right #main #suply .suply p.address, #right #main #suply .suply p.phonenumber {
       font-size: 75%;
       color: #8899AA; }
+    @media (max-width: 425px) {
+      #right #main #suply .suply {
+        margin: 17px 0; }
+        #right #main #suply .suply .right, #right #main #suply .suply .left {
+          width: 100%; }
+        #right #main #suply .suply .left {
+          background-color: #FFFFFF;
+          margin-left: -10px;
+          padding-right: 20px;
+          box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.11), 0 2px 3px 0 rgba(98, 98, 114, 0.21); }
+          #right #main #suply .suply .left div {
+            text-align: center; } }
     #right #main #suply .suply div {
       display: inline-table; }
       #right #main #suply .suply div div {
         display: inline-table;
         border-right: 1px solid #F7F7F8;
         padding: 0 11px; }
+        @media (max-width: 425px) {
+          #right #main #suply .suply div div {
+            width: 100%;
+            border: 0;
+            padding: 10px 0; } }
         #right #main #suply .suply div div:first-child {
           padding-left: 0; }
         #right #main #suply .suply div div:last-child {
@@ -380,6 +440,9 @@ i + input, span + input {
           text-align: center;
           margin: 0;
           margin-bottom: 5px; }
+          @media (max-width: 425px) {
+            #right #main #suply .suply div div h4 {
+              text-align: left; } }
         #right #main #suply .suply div div select {
           font-size: 68.75%;
           border: 1px solid #C9C9C9;
@@ -387,6 +450,10 @@ i + input, span + input {
           padding: 9.5px 0 9.5px 12px;
           color: #8899AA;
           width: 111px; }
+          @media (max-width: 425px) {
+            #right #main #suply .suply div div select {
+              width: 100%;
+              padding: 9.5px 0; } }
       #right #main #suply .suply div div:last-child {
         border: 0; }
   #right #main #suply_action .suply_action button {
@@ -405,6 +472,9 @@ i + input, span + input {
     #right #main #suply_action .suply_action {
       margin-top: 15px;
       padding-bottom: 15px; } }
+  @media (max-width: 425px) {
+    #right #main #suply_action .suply_action {
+      margin-top: 0; } }
   #right #main #suply_action .suply_action button.back {
     background-color: transparent;
     color: #626272;
@@ -426,7 +496,8 @@ i + input, span + input {
     background-color: #FFFFFF;
     border: 1px solid #C3C8CD;
     border-radius: 3px;
-    margin-bottom: 14px; }
+    margin-bottom: 14px;
+    overflow-x: auto; }
     #right #main #details div {
       position: relative; }
       #right #main #details div table {
