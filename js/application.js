@@ -102,3 +102,17 @@ jQuery(function($){
   }
   inputeffect()
 })
+
+jQuery(function($){
+  function checkhight(){
+    var $nav = $("nav")
+    var navheight = $nav.height()
+    if($('body').height() > navheight + 300) {
+      $(".poweredby-nav").css({'position':'absolute', 'bottom':'22'})
+    } else {
+      $(".poweredby-nav").css({'position':'relative', 'margin-top':'20px'})
+    }
+  }
+  $(window).resize(checkhight);
+  checkhight();
+});
