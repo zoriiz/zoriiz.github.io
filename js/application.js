@@ -83,15 +83,15 @@ var Frontend = (function () {
   }
 
   var inputAnimation = function() {
-    var delay = (function(){
-      var timer = 0;
+    var delay = function(){
+      var timer = 0
       return function(callback, ms){
         clearTimeout (timer)
         timer = setTimeout(callback, ms)
       }
-    })()
+    }()
 
-    var inputAnimate = (function() {
+    var inputAnimate = function() {
       $("#input_addproduct").keypress('input', function() {
         $('#icon-addpro').addClass('animated infinite zoomIn')
         // $('#icon-addpro > i').removeClass('icon-icon-plus')
@@ -104,7 +104,7 @@ var Frontend = (function () {
           // $('#icon-addpro > i').addClass('icon-icon-plus')
         }, 300 )
       })
-    })
+    }
     inputAnimate()
   }
 
